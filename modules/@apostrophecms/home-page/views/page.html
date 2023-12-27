@@ -1,0 +1,23 @@
+{#
+  This is an example home page template. It inherits and extends a layout template
+  that lives in the top-level views/ folder for convenience
+#}
+
+{% extends "layout.html" %}
+
+{# Home page is full width #}
+{% block sideNav %}{% endblock %}
+
+{% block main %}
+  <div class="home">
+    <div class="content">
+      {% area data.page, 'main' with {
+        'two-column': {
+          '@apostrophecms/image': {
+            sizes: '(min-width: 600px) 45vw, (min-width: 1140px) 530px'
+          }
+        }
+      } %}
+    </div>
+  </div>
+{% endblock %}
