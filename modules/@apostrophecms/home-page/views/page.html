@@ -1,0 +1,20 @@
+{#
+  This is an example home page template. It inherits and extends a layout template
+  that lives in the top-level views/ folder for convenience
+#}
+
+{% extends "layout.html" %}
+
+{# Home page is full width #}
+{% block sideNav %}{% endblock %}
+
+{% import "areas.html" as areas %}
+
+{% block main %}
+  <div class="home">
+    <div class="content">
+      {% render areas.main(data.page) %}
+      {% render areas.below(data.page) %}
+    </div>
+  </div>
+{% endblock %}
